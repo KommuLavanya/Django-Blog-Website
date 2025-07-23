@@ -1,0 +1,21 @@
+{% extends 'home/base.html'%}
+{%block title%}
+    Blog Post
+{% endblock %}
+{%block name%}
+    <h2 class="text-center" style="color:grey">Blog Post</h2>
+{% endblock %}
+{% block blogactive %}
+    active
+{% endblock %}
+{%block body%}
+
+    <article class="container">
+  <h2 class="blog-post-title mb-1">{{post.title}}</h2>
+  <p class="blog-post-meta">{{post.timeStamp}} <a href="/about">{{post.author}}</a></p>
+
+  <p>{{post.content}}</p>
+  
+</article>
+
+{% endblock %}

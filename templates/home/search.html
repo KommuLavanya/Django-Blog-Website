@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    Blog Home
+{% endblock %}
+
+{% block name %}
+    Blog Home
+{% endblock %}
+
+{% block blogactive %}
+    active
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    {% for iPost in allPosts %}
+    <h2>Results are: </h2>
+        <div class="card my-3">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <h8 class="card-title">Blog By - {{ iPost.author }}</h8>
+                <h5 class="card-title">{{ iPost.title }}</h5>
+                <p class="card-text">{{ iPost.content|truncatechars:100 }}</p>
+                <a href="{{ iPost.slug }}" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
